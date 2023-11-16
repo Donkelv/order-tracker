@@ -11,7 +11,7 @@ class AblyRepository implements AblyRepositoryInterface {
   AblyRepository() {
     clientOptions = ably.ClientOptions(key: dotenv.env['ABLY_API_KEY']);
     _ablyRealtime = ably.Realtime(options: clientOptions);
-    _orderChannel = _ablyRealtime.channels.get('order_status');
+    _orderChannel = _ablyRealtime.channels.get('order_channel');
   }
 
   @override

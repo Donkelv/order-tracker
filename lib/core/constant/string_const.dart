@@ -1,0 +1,16 @@
+
+
+
+
+final orderStages = [
+  'ORDER PLACED',
+  'ORDER ACCEPTED',
+  'ORDER PICK UP IN PROGRESS',
+  'ORDER ON THE WAY TO CUSTOMER',
+  'ORDER ARRIVED',
+  'ORDER DELIVERED',
+];
+
+
+
+
