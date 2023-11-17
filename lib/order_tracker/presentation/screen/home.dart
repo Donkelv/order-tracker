@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:order_tracker/core/constant/color_const.dart';
 import 'package:order_tracker/core/constant/theme.dart';
+import 'package:order_tracker/core/enities/hive_entities/user_entity.dart';
 import 'package:order_tracker/order_tracker/logic/provider.dart';
 import 'package:order_tracker/order_tracker/presentation/widgets/custom_order_widget.dart';
+
+import '../../../core/constant/hive_const.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -15,8 +19,12 @@ class HomeScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeScreenState extends ConsumerState<HomeScreen> {
+  //var userDetailsBox = Hive.box<UserHive>(HiveConst.userDetailsBox);
+
+  //UserHive? userHive;
   @override
   void initState() {
+    //userHive = userDetailsBox.get(HiveConst.userDetailsKey);
     Future.delayed(Duration.zero, () {
       ref
           .watch(ablyNotifierProvider.notifier)
@@ -64,25 +72,34 @@ class OrderWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           52.verticalSpace,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              CircleAvatar(
-                radius: 24.0.r,
-                backgroundColor: ColorConsts.gray20,
-              ),
-              5.0.horizontalSpace,
-              Text(
-                "Hello, ....",
-                style: largeTextRubik(),
-              ),
-            ],
-          ),
+          ValueListenableBuilder(
+              valueListenable:
+                  Hive.box<UserHive>(HiveConst.userDetailsBox).listenable(),
+              builder: (context, box, widget) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    CircleAvatar(
+                        radius: 24.0.r,
+                        backgroundColor: ColorConsts.gray20,
+                        backgroundImage:
+                            box.get(HiveConst.userDetailsKey)!.photo != null
+                                ? NetworkImage(
+                                    box.get(HiveConst.userDetailsKey)!.photo!)
+                                : null),
+                    5.0.horizontalSpace,
+                    Text(
+                      "Hello, ${box.get(HiveConst.userDetailsKey)!.displayName ?? "..."}",
+                      style: largeTextRubik(),
+                    ),
+                  ],
+                );
+              }),
           20.0.verticalSpace,
           Text(
-            "Here are your orders",
-            style: mediumTextRubik().copyWith(
+            "Available orders",
+            style: semiLargeTextRubik().copyWith(
               fontWeight: FontWeight.w500,
             ),
           ),

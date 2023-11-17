@@ -66,7 +66,7 @@ class _CustomOrderWidgetState extends State<CustomOrderWidget> {
                       ),
                       8.0.verticalSpace,
                       Text(
-                        "₦35",
+                        "N35",
                         style: semiLargeTextRubik()
                             .copyWith(fontWeight: FontWeight.w700),
                       ),
@@ -86,7 +86,7 @@ class _CustomOrderWidgetState extends State<CustomOrderWidget> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => OrderTrackPage()),
+                  MaterialPageRoute(builder: (context) => const OrderTrackPage()),
                 );
               },
             ),

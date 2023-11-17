@@ -23,6 +23,7 @@ mixin _$AblyState {
     required TResult Function() orderPlaced,
     required TResult Function(Message orderStatus) orderInProgress,
     required TResult Function(String error) error,
+    required TResult Function() unknownStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$AblyState {
     TResult? Function()? orderPlaced,
     TResult? Function(Message orderStatus)? orderInProgress,
     TResult? Function(String error)? error,
+    TResult? Function()? unknownStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$AblyState {
     TResult Function()? orderPlaced,
     TResult Function(Message orderStatus)? orderInProgress,
     TResult Function(String error)? error,
+    TResult Function()? unknownStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,7 @@ mixin _$AblyState {
     required TResult Function(_OrderPlaced value) orderPlaced,
     required TResult Function(_OrderInProgress value) orderInProgress,
     required TResult Function(_Error value) error,
+    required TResult Function(_Unknown value) unknownStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +64,7 @@ mixin _$AblyState {
     TResult? Function(_OrderPlaced value)? orderPlaced,
     TResult? Function(_OrderInProgress value)? orderInProgress,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Unknown value)? unknownStatus,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$AblyState {
     TResult Function(_OrderPlaced value)? orderPlaced,
     TResult Function(_OrderInProgress value)? orderInProgress,
     TResult Function(_Error value)? error,
+    TResult Function(_Unknown value)? unknownStatus,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,6 +139,7 @@ class _$_Initial implements _Initial {
     required TResult Function() orderPlaced,
     required TResult Function(Message orderStatus) orderInProgress,
     required TResult Function(String error) error,
+    required TResult Function() unknownStatus,
   }) {
     return initial();
   }
@@ -145,6 +152,7 @@ class _$_Initial implements _Initial {
     TResult? Function()? orderPlaced,
     TResult? Function(Message orderStatus)? orderInProgress,
     TResult? Function(String error)? error,
+    TResult? Function()? unknownStatus,
   }) {
     return initial?.call();
   }
@@ -157,6 +165,7 @@ class _$_Initial implements _Initial {
     TResult Function()? orderPlaced,
     TResult Function(Message orderStatus)? orderInProgress,
     TResult Function(String error)? error,
+    TResult Function()? unknownStatus,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -173,6 +182,7 @@ class _$_Initial implements _Initial {
     required TResult Function(_OrderPlaced value) orderPlaced,
     required TResult Function(_OrderInProgress value) orderInProgress,
     required TResult Function(_Error value) error,
+    required TResult Function(_Unknown value) unknownStatus,
   }) {
     return initial(this);
   }
@@ -185,6 +195,7 @@ class _$_Initial implements _Initial {
     TResult? Function(_OrderPlaced value)? orderPlaced,
     TResult? Function(_OrderInProgress value)? orderInProgress,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Unknown value)? unknownStatus,
   }) {
     return initial?.call(this);
   }
@@ -197,6 +208,7 @@ class _$_Initial implements _Initial {
     TResult Function(_OrderPlaced value)? orderPlaced,
     TResult Function(_OrderInProgress value)? orderInProgress,
     TResult Function(_Error value)? error,
+    TResult Function(_Unknown value)? unknownStatus,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -252,6 +264,7 @@ class _$_Loading implements _Loading {
     required TResult Function() orderPlaced,
     required TResult Function(Message orderStatus) orderInProgress,
     required TResult Function(String error) error,
+    required TResult Function() unknownStatus,
   }) {
     return loading();
   }
@@ -264,6 +277,7 @@ class _$_Loading implements _Loading {
     TResult? Function()? orderPlaced,
     TResult? Function(Message orderStatus)? orderInProgress,
     TResult? Function(String error)? error,
+    TResult? Function()? unknownStatus,
   }) {
     return loading?.call();
   }
@@ -276,6 +290,7 @@ class _$_Loading implements _Loading {
     TResult Function()? orderPlaced,
     TResult Function(Message orderStatus)? orderInProgress,
     TResult Function(String error)? error,
+    TResult Function()? unknownStatus,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -292,6 +307,7 @@ class _$_Loading implements _Loading {
     required TResult Function(_OrderPlaced value) orderPlaced,
     required TResult Function(_OrderInProgress value) orderInProgress,
     required TResult Function(_Error value) error,
+    required TResult Function(_Unknown value) unknownStatus,
   }) {
     return loading(this);
   }
@@ -304,6 +320,7 @@ class _$_Loading implements _Loading {
     TResult? Function(_OrderPlaced value)? orderPlaced,
     TResult? Function(_OrderInProgress value)? orderInProgress,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Unknown value)? unknownStatus,
   }) {
     return loading?.call(this);
   }
@@ -316,6 +333,7 @@ class _$_Loading implements _Loading {
     TResult Function(_OrderPlaced value)? orderPlaced,
     TResult Function(_OrderInProgress value)? orderInProgress,
     TResult Function(_Error value)? error,
+    TResult Function(_Unknown value)? unknownStatus,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -372,6 +390,7 @@ class _$_OrderPlaced implements _OrderPlaced {
     required TResult Function() orderPlaced,
     required TResult Function(Message orderStatus) orderInProgress,
     required TResult Function(String error) error,
+    required TResult Function() unknownStatus,
   }) {
     return orderPlaced();
   }
@@ -384,6 +403,7 @@ class _$_OrderPlaced implements _OrderPlaced {
     TResult? Function()? orderPlaced,
     TResult? Function(Message orderStatus)? orderInProgress,
     TResult? Function(String error)? error,
+    TResult? Function()? unknownStatus,
   }) {
     return orderPlaced?.call();
   }
@@ -396,6 +416,7 @@ class _$_OrderPlaced implements _OrderPlaced {
     TResult Function()? orderPlaced,
     TResult Function(Message orderStatus)? orderInProgress,
     TResult Function(String error)? error,
+    TResult Function()? unknownStatus,
     required TResult orElse(),
   }) {
     if (orderPlaced != null) {
@@ -412,6 +433,7 @@ class _$_OrderPlaced implements _OrderPlaced {
     required TResult Function(_OrderPlaced value) orderPlaced,
     required TResult Function(_OrderInProgress value) orderInProgress,
     required TResult Function(_Error value) error,
+    required TResult Function(_Unknown value) unknownStatus,
   }) {
     return orderPlaced(this);
   }
@@ -424,6 +446,7 @@ class _$_OrderPlaced implements _OrderPlaced {
     TResult? Function(_OrderPlaced value)? orderPlaced,
     TResult? Function(_OrderInProgress value)? orderInProgress,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Unknown value)? unknownStatus,
   }) {
     return orderPlaced?.call(this);
   }
@@ -436,6 +459,7 @@ class _$_OrderPlaced implements _OrderPlaced {
     TResult Function(_OrderPlaced value)? orderPlaced,
     TResult Function(_OrderInProgress value)? orderInProgress,
     TResult Function(_Error value)? error,
+    TResult Function(_Unknown value)? unknownStatus,
     required TResult orElse(),
   }) {
     if (orderPlaced != null) {
@@ -519,6 +543,7 @@ class _$_OrderInProgress implements _OrderInProgress {
     required TResult Function() orderPlaced,
     required TResult Function(Message orderStatus) orderInProgress,
     required TResult Function(String error) error,
+    required TResult Function() unknownStatus,
   }) {
     return orderInProgress(orderStatus);
   }
@@ -531,6 +556,7 @@ class _$_OrderInProgress implements _OrderInProgress {
     TResult? Function()? orderPlaced,
     TResult? Function(Message orderStatus)? orderInProgress,
     TResult? Function(String error)? error,
+    TResult? Function()? unknownStatus,
   }) {
     return orderInProgress?.call(orderStatus);
   }
@@ -543,6 +569,7 @@ class _$_OrderInProgress implements _OrderInProgress {
     TResult Function()? orderPlaced,
     TResult Function(Message orderStatus)? orderInProgress,
     TResult Function(String error)? error,
+    TResult Function()? unknownStatus,
     required TResult orElse(),
   }) {
     if (orderInProgress != null) {
@@ -559,6 +586,7 @@ class _$_OrderInProgress implements _OrderInProgress {
     required TResult Function(_OrderPlaced value) orderPlaced,
     required TResult Function(_OrderInProgress value) orderInProgress,
     required TResult Function(_Error value) error,
+    required TResult Function(_Unknown value) unknownStatus,
   }) {
     return orderInProgress(this);
   }
@@ -571,6 +599,7 @@ class _$_OrderInProgress implements _OrderInProgress {
     TResult? Function(_OrderPlaced value)? orderPlaced,
     TResult? Function(_OrderInProgress value)? orderInProgress,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Unknown value)? unknownStatus,
   }) {
     return orderInProgress?.call(this);
   }
@@ -583,6 +612,7 @@ class _$_OrderInProgress implements _OrderInProgress {
     TResult Function(_OrderPlaced value)? orderPlaced,
     TResult Function(_OrderInProgress value)? orderInProgress,
     TResult Function(_Error value)? error,
+    TResult Function(_Unknown value)? unknownStatus,
     required TResult orElse(),
   }) {
     if (orderInProgress != null) {
@@ -669,6 +699,7 @@ class _$_Error implements _Error {
     required TResult Function() orderPlaced,
     required TResult Function(Message orderStatus) orderInProgress,
     required TResult Function(String error) error,
+    required TResult Function() unknownStatus,
   }) {
     return error(this.error);
   }
@@ -681,6 +712,7 @@ class _$_Error implements _Error {
     TResult? Function()? orderPlaced,
     TResult? Function(Message orderStatus)? orderInProgress,
     TResult? Function(String error)? error,
+    TResult? Function()? unknownStatus,
   }) {
     return error?.call(this.error);
   }
@@ -693,6 +725,7 @@ class _$_Error implements _Error {
     TResult Function()? orderPlaced,
     TResult Function(Message orderStatus)? orderInProgress,
     TResult Function(String error)? error,
+    TResult Function()? unknownStatus,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -709,6 +742,7 @@ class _$_Error implements _Error {
     required TResult Function(_OrderPlaced value) orderPlaced,
     required TResult Function(_OrderInProgress value) orderInProgress,
     required TResult Function(_Error value) error,
+    required TResult Function(_Unknown value) unknownStatus,
   }) {
     return error(this);
   }
@@ -721,6 +755,7 @@ class _$_Error implements _Error {
     TResult? Function(_OrderPlaced value)? orderPlaced,
     TResult? Function(_OrderInProgress value)? orderInProgress,
     TResult? Function(_Error value)? error,
+    TResult? Function(_Unknown value)? unknownStatus,
   }) {
     return error?.call(this);
   }
@@ -733,6 +768,7 @@ class _$_Error implements _Error {
     TResult Function(_OrderPlaced value)? orderPlaced,
     TResult Function(_OrderInProgress value)? orderInProgress,
     TResult Function(_Error value)? error,
+    TResult Function(_Unknown value)? unknownStatus,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -749,4 +785,129 @@ abstract class _Error implements AblyState {
   @JsonKey(ignore: true)
   _$$_ErrorCopyWith<_$_Error> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_UnknownCopyWith<$Res> {
+  factory _$$_UnknownCopyWith(
+          _$_Unknown value, $Res Function(_$_Unknown) then) =
+      __$$_UnknownCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_UnknownCopyWithImpl<$Res>
+    extends _$AblyStateCopyWithImpl<$Res, _$_Unknown>
+    implements _$$_UnknownCopyWith<$Res> {
+  __$$_UnknownCopyWithImpl(_$_Unknown _value, $Res Function(_$_Unknown) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_Unknown implements _Unknown {
+  const _$_Unknown();
+
+  @override
+  String toString() {
+    return 'AblyState.unknownStatus()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_Unknown);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() orderPlaced,
+    required TResult Function(Message orderStatus) orderInProgress,
+    required TResult Function(String error) error,
+    required TResult Function() unknownStatus,
+  }) {
+    return unknownStatus();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? orderPlaced,
+    TResult? Function(Message orderStatus)? orderInProgress,
+    TResult? Function(String error)? error,
+    TResult? Function()? unknownStatus,
+  }) {
+    return unknownStatus?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? orderPlaced,
+    TResult Function(Message orderStatus)? orderInProgress,
+    TResult Function(String error)? error,
+    TResult Function()? unknownStatus,
+    required TResult orElse(),
+  }) {
+    if (unknownStatus != null) {
+      return unknownStatus();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_OrderPlaced value) orderPlaced,
+    required TResult Function(_OrderInProgress value) orderInProgress,
+    required TResult Function(_Error value) error,
+    required TResult Function(_Unknown value) unknownStatus,
+  }) {
+    return unknownStatus(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_OrderPlaced value)? orderPlaced,
+    TResult? Function(_OrderInProgress value)? orderInProgress,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Unknown value)? unknownStatus,
+  }) {
+    return unknownStatus?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_OrderPlaced value)? orderPlaced,
+    TResult Function(_OrderInProgress value)? orderInProgress,
+    TResult Function(_Error value)? error,
+    TResult Function(_Unknown value)? unknownStatus,
+    required TResult orElse(),
+  }) {
+    if (unknownStatus != null) {
+      return unknownStatus(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Unknown implements AblyState {
+  const factory _Unknown() = _$_Unknown;
 }

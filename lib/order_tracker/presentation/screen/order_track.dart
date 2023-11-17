@@ -8,7 +8,7 @@ import 'package:order_tracker/core/constant/image_const.dart';
 import 'package:order_tracker/core/constant/string_const.dart';
 import 'package:order_tracker/core/constant/string_extension.dart';
 import 'package:order_tracker/core/constant/theme.dart';
-import 'package:order_tracker/core/date_time_formatter.dart';
+import 'package:order_tracker/core/constant/date_time_formatter.dart';
 
 import '../../../core/constant/color_const.dart';
 import '../../logic/provider.dart';
@@ -156,30 +156,40 @@ class CustomOrderTrackWidget extends ConsumerWidget {
           ],
           borderRadius: BorderRadius.circular(24.0.r),
         ),
-        child: ref.watch(ablyNotifierProvider).when(initial: () {
-          return Padding(
-            padding: EdgeInsets.symmetric(vertical: 20.0.h),
-            child: const Center(
-              child: CircularProgressIndicator.adaptive(),
-            ),
-          );
-        }, loading: () {
-          debugPrint("loading state");
-          return Padding(
-            padding: EdgeInsets.symmetric(vertical: 20.0.h),
-            child: const Center(
-              child: CircularProgressIndicator.adaptive(),
-            ),
-          );
-        }, orderPlaced: () {
-          return CustomOrderPlacedWidget(size: size);
-        }, orderInProgress: (orderInProgress) {
-          return CustomOrderInProgressWidget(orderInProgress: orderInProgress);
-        }, error: (error) {
-          return CustomOrderErrorWidget(
-            error: error,
-          );
-        }),
+        child: ref.watch(ablyNotifierProvider).when(
+          initial: () {
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 20.0.h),
+              child: const Center(
+                child: CircularProgressIndicator.adaptive(),
+              ),
+            );
+          },
+          loading: () {
+            debugPrint("loading state");
+            return Padding(
+              padding: EdgeInsets.symmetric(vertical: 20.0.h),
+              child: const Center(
+                child: CircularProgressIndicator.adaptive(),
+              ),
+            );
+          },
+          orderPlaced: () {
+            return CustomOrderPlacedWidget(size: size);
+          },
+          orderInProgress: (orderInProgress) {
+            return CustomOrderInProgressWidget(
+                orderInProgress: orderInProgress);
+          },
+          error: (error) {
+            return CustomOrderErrorWidget(
+              error: error,
+            );
+          },
+          unknownStatus: () {
+            return CustomOrderPlacedWidget(size: size);
+          },
+        ),
       ),
     );
   }
@@ -240,15 +250,16 @@ class CustomOrderPlacedWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Icon(Icons.delivery_dining_outlined, color: ColorConsts.white,),
+              const Icon(
+                Icons.delivery_dining_outlined,
+                color: ColorConsts.white,
+              ),
               //SvgPicture.asset(ImageConst().orderPlacedIcon),
               16.0.horizontalSpace,
               Text(
-               StringExtensions(orderStages.first).capitalize(),
+                StringExtensions(orderStages.first).capitalize(),
                 style: mediumTextRubik().copyWith(
-                  color: ColorConsts.white,
-                  fontWeight: FontWeight.w600
-                ),
+                    color: ColorConsts.white, fontWeight: FontWeight.w600),
               ),
             ],
           ),
@@ -354,7 +365,7 @@ class CustomTrackOrderStage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                     StringExtensions(stage).capitalize(),
+                      StringExtensions(stage).capitalize(),
                       style: mediumTextRubik().copyWith(
                           fontWeight: FontWeight.w700,
                           color: isActive
@@ -366,11 +377,10 @@ class CustomTrackOrderStage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                         Icon(
+                        Icon(
                           Icons.alarm,
                           color: ColorConsts.primary,
                           size: 20.0.sp,
-                          
                         ),
                         7.0.horizontalSpace,
                         Text(

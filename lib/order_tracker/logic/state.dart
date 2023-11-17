@@ -10,4 +10,5 @@ class AblyState with _$AblyState {
   const factory AblyState.orderInProgress(Message orderStatus) =
       _OrderInProgress;
   const factory AblyState.error(String error) = _Error;
+  const factory AblyState.unknownStatus() = _Unknown;
 }
