@@ -1,16 +1,21 @@
-# order_tracker
+# Order Tracker App
 
-A new Flutter project.
+This is an order tracking application written in Flutter. It uses Ably for real-time updates on order statuses. Please follow the instructions below to set up the project and configure your API keys.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter version 3.10.1
+- FVM (Flutter Version Management)
+- Dotenv (for handling environment variables)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/order-tracker.git
+   cd order-tracker
+2. Ensure you have FVM installed:
+

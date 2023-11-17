@@ -58,7 +58,23 @@ void main() {
       expect(ablyNotifier.state, const AblyState.unknownStatus());
     });
 
-    
+    test('connectToChannel updates state on known order status', () async {
+      const channelName = 'order_channel';
+
+      // Simulate a successful connection
+      when(mockAblyUseCase.connectToChannel(channelName))
+          .thenAnswer((_) async {});
+
+      // Simulate receiving a message with a known order status
+      final testMessage = Message(data: 'ORDER ACCEPTED');
+      when(mockAblyUseCase.getOrderUpdates())
+          .thenAnswer((_) => Stream.value(testMessage));
+
+      await ablyNotifier.connectToChannel(channelName);
+
+      // Verify that the state is updated accordingly
+      expect(ablyNotifier.state, AblyState.orderInProgress(testMessage));
+    });
 
     tearDown(() {
       reset(mockAblyUseCase);
